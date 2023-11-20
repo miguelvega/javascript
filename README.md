@@ -18,6 +18,7 @@ También, podemos agregar eventos a esos elementos para hacer más dinámica nue
 evento indica lo que ha ocurrido.Javascrpit reliza acciones especificaos de la app para modificar el DOM cuando sucede dicho evento. 
 El DOM visualiza el documento de HTML como un árbol de tres nodos. Un nodo representa un documento de HTML y este nodo contiene dos hijos los cuales
 son los elementos <head> y <body>. 
+Una librería comúnmente utilizada para manipular el DOM de manera más sencilla es jQuery. jQuery simplifica la manipulación del DOM y proporciona una abstracción de nivel superior para realizar tareas comunes, como la manipulación de elementos, eventos y animaciones en una manera más fácil y concisa que el uso directo de JavaScript puro.
 
 
 
