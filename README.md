@@ -22,5 +22,40 @@ son los elementos <head> y <body>.
 Una librería comúnmente utilizada para manipular el DOM de manera más fácil y eficiente es jQuery. jQuery simplifica las tareas comunes de manipulación del DOM y manejo de eventos, proporcionando una interfaz más sencilla y abstracciones que facilitan el desarrollo con JavaScript.
 
 
+## Booleano
 
+`undefined == null` <br>
+Esta comparación devuelve true porque en JavaScript, undefined es considerado igual a null en una comparación no estricta (==). 
+
+`NaN == NaN` <br>
+NaN (Not a Number) en JavasScript es un valor especial que no se considera igual a sí mismo en una comparación no estricta. Por lo tanto, NaN == NaN se evalúa como false. Este comportamiento se debe a que NaN se utiliza para representar un valor no numérico o indefinido, y no tiene sentido comparar dos valores no numéricos entre sí.
+
+`null == false` <br>
+null se considera falso en un contexto booleano, pero en una comparación no estricta, null no se considera igual a false. Por lo tanto, devuelve false
+
+`0 == false` <br>
+Esta comparación devuelve true. En una comparación no estricta, el número 0 se considera igual a false. Esto es parte de las conversiones automáticas de tipos en JavaScript.
+
+`"" == false` <br>
+Similar al caso anterior, en una comparación no estricta, una cadena vacía "" se considera igual a false. Por lo tanto, "" == false se evalúa como true. Esto se debe a que JavaScript realiza conversiones automáticas de tipos al comparar valores de diferentes tipos.
+
+Sin embargo si usamos la igualdad estricta, el resultado seria false para todas la comparaciones anteriores.
+Ademas, En lugar de utilizar == o ===, podemos utilizar Object.is() para las comparaciones en ciertos casos especiales en los que se quería asegurar un comportamiento de igualdad más preciso y consistente.
+
+### Arrays
+
+`[1, 2, 3] + [4, 5, 6]`  <br>
+Esta expresión concatenará los dos arrays en lugar de sumar sus elementos. En JavaScript, el operador + utilizado con arrays realiza la concatenación de las cadenas resultantes de convertir los arrays a texto. Por lo tanto, el resultado será la cadena "1,2,34,5,6". 
+
+`!![]`  <br>
+Esto convierte el array vacío [] a un valor booleano. El operador ! niega el valor, y !! lo convierte de nuevo a su forma original. En JavaScript, cualquier array, incluso uno vacío, se evalúa como true en un contexto booleano. Por lo tanto, !![] se evalúa como true.
+
+`[] == true` <br>
+JavaScript realiza una conversión automática de tipos en comparaciones. En este caso, el array vacío [] se convierte a un valor booleano, que es true. Luego, JavaScript intenta convertir true a un número para la comparación, y true se convierte a 1. Por lo tanto, esta expresión se evalúa como [] == 1, lo cual es false.
+
+`[10, 1, 3].sort()`  <br>
+sort() ordena los elementos de un array como cadenas. En este caso, los números se ordenan como cadenas, resultando en ["1", "10", "3"].
+
+`[] == 0` <br>
+Similar al tercer punto, JavaScript realiza conversiones automáticas de tipos. El array vacío [] se convierte a un valor booleano (true), luego true se convierte a 1, y finalmente se compara con 0. Por lo tanto, esta expresión se evalúa como 1 == 0, lo cual es false.
 
