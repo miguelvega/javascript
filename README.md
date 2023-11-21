@@ -59,3 +59,25 @@ sort() ordena los elementos de un array como cadenas. En este caso, los números
 `[] == 0` <br>
 Similar al tercer punto, JavaScript realiza conversiones automáticas de tipos. El array vacío [] se convierte a un valor booleano (true), luego true se convierte a 1, y finalmente se compara con 0. Por lo tanto, esta expresión se evalúa como 1 == 0, lo cual es false.
 
+## Clausuras
+
+```javascript
+
+function f1(x) {
+  var baz = 3;
+  return function (y) {
+    console.log(x + y + (baz++));
+    }
+}
+var bar = f1(5);
+bar(11);
+
+```
+Primero se define `f1` que es una función que toma un parámetro `x`. Dentro de esta función, se declara una variable baz con el valor 3. Luego, se devuelve otra función anónima que toma un parámetro `y` y realiza una operación que involucra `x`,`y` y `baz++`
+
+Llamamos a `f1` con el argumento 5, y el resultado se asigna a la variable bar. En este punto, bar se convierte en una función que tiene acceso al estado de la función f1 en el momento donde el valor de x = 5 y a una variable llamada baz = 3.
+
+Finalmente, se llama a la función bar con el argumento 11. Entonces, dentro de la función anónima devuelta por f1, tenemos que x es 5, y es 11, y baz = 3. Ademas, la expresión baz++ devuelve 3 y luego incrementa baz en 1.
+
+Por lo tanto, en la consola se imprimirá 19.
+
